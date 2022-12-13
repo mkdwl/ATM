@@ -1,0 +1,48 @@
+def Withdraw():
+    Withdraw= int (input(("Enter amount to Withdraw : ")))
+    global Balance
+    if Balance>=Withdraw:
+        Balance=Balance-Withdraw
+        print(Withdraw, "rupees have been withdrawed.")
+    else:
+        print("Insufficient Balance!!")
+    print("Balance : ", Balance)
+    a=input("do you want to continue \"y/n\" :")
+    if a=="n":
+        Exit()
+def Deposit():
+    Deposit=int(input("Enter amount to Deposit : ") )
+    global Balance
+    Balance=Balance+Deposit
+    print("Balance : ", Balance)
+    a=input("do you want to continue \"y/n\" :")
+    if a=="n":
+        Exit()
+def Check_Balance():
+    print("Your Balance : ", Balance)
+    a=input("do you want to continue \"y/n\" :")
+    if a=="n":
+        Exit()
+def Exit():
+    print("Thank you for using our Bank")
+    exit()
+Balance=0
+a="a"
+while a!="n":
+    print("Welcome to bank")
+    print('''1- Withdraw
+    2- Deposit
+    3- Check Balance
+    4- Exit''')
+    try:
+        input_from_user = int(input("\nSelect one option: "))
+    except:
+        print("Please try using appropriate number")
+    if input_from_user==1:
+        Withdraw()
+    elif input_from_user==2:
+        Deposit()
+    elif input_from_user==3:
+        Check_Balance()
+    elif input_from_user==4:
+        Exit()
